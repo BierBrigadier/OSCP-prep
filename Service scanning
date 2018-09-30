@@ -38,6 +38,7 @@ page source?
 burp?
 wpscan?
 sqlinjection?
+cewl?
 telnet {ip} {port}
 
 
