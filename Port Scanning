@@ -1,0 +1,27 @@
+Must need:
+
+Standard nmap scan:
+nmap -sV -sC -O -o nmapinit.txt {ip}
+
+Scann 
+masscan -p1-65535,U:1-65535 192.168.0.1 --rate=1000 -e eth0
+nmap -p {masscanports} -sV -sC -o nmapspecificports.txt {ip}
+
+Full nmap scan:
+nmap -p- -o nmapfull.txt {ip}
+
+
+Backup:
+
+UDP nmap scan:
+nmap -sU -o nmapudp.txt {ip}
+
+UDP full nmap scan:
+nmap -sU -p- nmapudpfull.txt {ip}
+
+Search for nmap scripts:
+ls -l /usr/share/nmap/scripts/ | grep {service}
+
+Use specific nmap script:
+nmap -p 139,445 --script=smb-check-vulns --script-args=unsafe=1 {ip}
+
