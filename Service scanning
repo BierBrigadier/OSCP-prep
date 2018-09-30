@@ -1,0 +1,15 @@
+SMB (p 139, 445):
+rpcclient -u "" {ip}
+  --> srvinfo
+  --> enumdomusers
+  --> getdompwinfo
+  
+  enum4linux -v {ip}
+  
+  
+  smtp:
+  nc -nv {ip} {port}
+  --> VRF bob
+  
+  smnp:
+  smnpwalk -c public
