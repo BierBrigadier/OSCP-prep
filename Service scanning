@@ -1,3 +1,20 @@
+HTTP (p 80, 443):
+nikto -o nikto.txt -host {ip}
+dirbuster
+gobuster -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u {ip}
+burp
+wpscan
+
+
+FTP (p 21):
+ftp anonymous@{ip}
+
+SSH (p 22):
+ssh_enum_v0.3.py -a -u {userwordlist} -i {ip}
+hydra -l {username} -x 4:10:aA {ip} ssh
+hydra -l {username} -P /usr/share/wordlists/rockyou.txt {ip} ssh
+
+
 SMB (p 139, 445):
 rpcclient -u "" {ip}
   --> srvinfo
