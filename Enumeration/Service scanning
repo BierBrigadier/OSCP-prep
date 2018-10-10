@@ -43,7 +43,7 @@ telnet {ip} {port}
 
 
 SMB, NETBIOS (p 139, 445):
-rpcclient -u "" {ip}
+rpcclient -U "" {ip}
   --> srvinfo
   --> enumdomusers
   --> getdompwinfo  
