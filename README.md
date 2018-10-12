@@ -1,3 +1,2 @@
-# hello-world
-Hi
-I'm a bierbrigadier
+# OSCP Cheatcheats
+Jaadawaaaahhll
