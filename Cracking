@@ -1,2 +1,5 @@
+john (phpmyadmin details):
+sudo john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
+
 crack hashcat(md5=0, SHA1=100, NTLM=1000, SHA256=1400), (Straight=0, Bruteforce=3):
 hashcat -m 0 -a 0 myhash.txt /usr/share/wordlists/rockyou.txt
