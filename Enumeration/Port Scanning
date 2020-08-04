@@ -1,5 +1,8 @@
 Must need:
 
+Reconnoitre:
+sudo reconnoitre -t 192.168.126.131 -o /home/kali/Documents/labs/ --services
+
 Standard nmap scan:
 nmap -sV -sC -O -o nmapinit.txt {ip}
 
