@@ -34,6 +34,7 @@ HTTP (p 80, 443):
 nikto -o nikto.txt -host {ip}
 dirbuster
 gobuster -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u {ip}
+gobuster dir -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://192.168.126.131/ -x html,php.bak,cgi,cgf,old -t 40
 page source?
 burp?
 wpscan?
