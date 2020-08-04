@@ -1,0 +1,3 @@
+Add virtual hosts
+add to /etc/hosts:
+192.168.126.131 votenow.local datasafe.votenow.local
