@@ -1,4 +1,6 @@
 python -c 'import pty; pty.spawn("/bin/sh")'
+python3 -c 'import pty; pty.spawn("/bin/sh")'
+
 echo os.system('/bin/bash')
 /bin/sh -i
 perl —e 'exec "/bin/sh";'
