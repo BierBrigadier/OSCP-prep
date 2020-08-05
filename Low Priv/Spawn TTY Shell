@@ -17,3 +17,10 @@ exec "/bin/sh"
 
 (From within nmap)
 !sh
+
+
+THEN:
+export TERM=xterm-256color
+CTRL+Z //to put the session background
+stty raw -echo
+fg   plus two times press enter //To interact with background session
